@@ -5,8 +5,12 @@ const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 
+window.process = { browser: true, env: { ENVIRONMENT: 'BROWSER' } };
 
-const key = "CryptoJS.enc.Hex.parse(CryptoJS.lib.WordArray.random(16).toString())";
+ 
+
+const key = "CryptoJS.enc.Hex.parse(CryptoJS.lib.WordArray.random(16).toString())"
+console.log(key);
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {

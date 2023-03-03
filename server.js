@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const http = require('http');
 const path = require('path');
@@ -15,7 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 const botname = 'ChatRoom Bot';
-const key = "CryptoJS.enc.Hex.parse(CryptoJS.lib.WordArray.random(16).toString())";
+const key = process.env.SECRET_KEY; 
+console.log(key);
 
 // Run when client connects
 io.on('connection', socket => {
